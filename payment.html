@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+</head>
+<style>
+body, h1, p, select, input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Payment Section */
+.payment {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0056b3; 
+}
+
+.container {
+    padding: 20px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+.input:focus {
+    border: 1px solid #0056b3; 
+    outline: none;
+}
+
+select {
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.box {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    background: #f9f9f9;
+    margin: 10px 0;
+    transition: background 0.3s, border 0.3s;
+}
+
+.box:hover {
+    background: #e7f3ff; 
+    border: 1px solid #0056b3; 
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    text-align: center;
+    text-decoration: none; 
+}
+
+.btn:hover {
+    background-color: #003d80; 
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .payment {
+        padding: 15px;
+    }
+
+    .input, select {
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+</style>
+<body>
+    <section class="payment" id="payment">
+        <h1 class="heading">Payment Options</h1>
+        <form id="paymentForm">
+            <div class="container">
+                <p>Total Amount: <span id="totalAmountPayment">₹0</span></p>
+                <p>Select Payment Method <span>*</span></p>
+                <select id="paymentMethod" class="input" required>
+                    <option value="">Choose a payment method</option>
+                    <option value="credit">Credit Card</option>
+                    <option value="debit">Debit Card</option>
+                    <option value="netbanking">Net Banking</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+
+                <div id="paymentDetails" style="display: none;">
+                    <div class="box" id="cardDetails" style="display: none;">
+                        <p>Card Number <span>*</span></p>
+                        <input type="text" class="input" placeholder="Enter Card Number" required>
+                        <p>Card Holder Name <span>*</span></p>
+                        <input type="text" class="input" placeholder="Name on Card" required>
+                        <p>CVV <span>*</span></p>
+                        <input type="text" class="input" placeholder="CVV" required>
+                    </div>
+
+                    <div class="box" id="netBankingDetails" style="display: none;">
+                        <p>Select Bank <span>*</span></p>
+                        <select id="bankSelect" class="input" required>
+                            <option value="">Select a bank</option>
+                            <option value="hdfc">HDFC Bank</option>
+                            <option value="icici">ICICI Bank</option>
+                            <option value="axis">Axis Bank</option>
+                            <option value="sbi">State Bank of India</option>
+                        </select>
+                        <p>Account Number <span>*</span></p>
+                        <input type="text" class="input" placeholder="Enter Account Number" required>
+                        <p>Account Holder Name <span>*</span></p>
+                        <input type="text" class="input" placeholder="Enter Account Holder Name" required>
+                    </div>
+
+                    <div class="box" id="paypalDetails" style="display: none;">
+                        <p>PayPal User ID <span>*</span></p>
+                        <input type="text" class="input" placeholder="Enter PayPal User ID" required>
+                    </div>
+                </div>
+
+                <button type="button" class="btn" id="payNow">Pay Now</button>
+            </div>
+        </form>
+    </section>
+    <script>
+    const paymentMethod = document.getElementById('paymentMethod');
+const paymentDetails = document.getElementById('paymentDetails');
+const totalAmountPayment = document.getElementById('totalAmountPayment');
+
+// Fetch and display total amount from sessionStorage
+totalAmountPayment.innerText = '₹' + (sessionStorage.getItem('totalAmount') || '0');
+
+// Event listener for payment method selection
+paymentMethod.addEventListener('change', function() {
+    const method = this.value;
+
+    // Hide all payment details by default
+    document.getElementById('cardDetails').style.display = 'none';
+    document.getElementById('netBankingDetails').style.display = 'none';
+    document.getElementById('paypalDetails').style.display = 'none';
+
+    // Show relevant payment details based on the selected method
+    switch (method) {
+        case 'credit':
+        case 'debit':
+            document.getElementById('cardDetails').style.display = 'block';
+            break;
+        case 'netbanking':
+            document.getElementById('netBankingDetails').style.display = 'block';
+            break;
+        case 'paypal':
+            document.getElementById('paypalDetails').style.display = 'block';
+            break;
+    }
+
+    // Show/hide payment details section
+    paymentDetails.style.display = method ? 'block' : 'none'; 
+});
+
+// Event listener for the "Pay Now" button
+document.getElementById('payNow').addEventListener('click', function() {
+    const method = paymentMethod.value;
+
+    if (!method) {
+        alert('Please select a payment method!');
+        return;
+    }
+
+    let paymentSuccess = false;
+
+    // Validate payment information based on the selected method
+    switch (method) {
+        case 'credit':
+        case 'debit':
+            const cardDetailsInputs = document.querySelectorAll('#cardDetails input[type="text"]');
+            const [cardNumber, cardName, cvv] = cardDetailsInputs;
+
+            if (cardNumber.value && cardName.value && cvv.value) {
+                paymentSuccess = true;
+            } else {
+                alert('Please fill in all card details!');
+            }
+            break;
+
+        case 'netbanking':
+            const bankSelect = document.querySelector('#netBankingDetails select').value;
+            const netBankingInputs = document.querySelectorAll('#netBankingDetails input[type="text"]');
+            const [accountNumber, accountHolderName] = netBankingInputs;
+
+            if (bankSelect && accountNumber.value && accountHolderName.value) {
+                paymentSuccess = true;
+            } else {
+                alert('Please fill in all net banking details!');
+            }
+            break;
+
+        case 'paypal':
+            const paypalUserId = document.querySelector('#paypalDetails input[type="text"]').value;
+
+            if (paypalUserId) {
+                paymentSuccess = true;
+            } else {
+                alert('Please enter your PayPal User ID!');
+            }
+            break;
+    }
+
+    // Process payment if successful
+    if (paymentSuccess) {
+        alert(`Payment has been successfully processed using ${method}.`);
+        alert('Booking Successfully Completed!');
+        
+        // Redirect to a confirmation page
+        window.location.href = 'confirmation.html'; // Adjust URL as needed
+    }
+});
+</script>
+</body>
+</html>

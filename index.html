@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HotelHub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  </head>
+
+  <body>
+    <header>
+      <div id="menu-bar" class="fas fa-bars"></div>
+      <a href="index.html" class="logo"><span>HotelHub</span></a>
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#hotel">Our Hotels</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#review">Review</a>
+      </nav> <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user" id="login-btn"></i>
+      </div>
+      <form class="search-bar-container" id="search-bar-container">
+        <input
+          type="search"
+          id="search-bar"
+          placeholder="Search here..."
+          class="search-bar" />
+        <label for="search-bar" class="fas fa-search"></label>
+      </form>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-images">
+        <img
+          src="./boat_building_hotel_orlando_usa_4k_5k_hd_travel-2560x1440.jpg"
+          alt="Hotel Image 1"
+          class="active" />
+        <img src="./wp38040 (1).webp" alt="Hotel Image 2" />
+        <img src="./wp38040.webp" alt="Hotel Image 3" />
+        <img src="./wp6755141.jpg" alt="Hotel Image 4" />
+        <img src="./hotel-9.jpg" alt="Hotel Image 5" />
+      </div>
+      <div class="hero-content">
+        <h1>
+          Welcome to <span class="highlight">HotelHub</span><br />
+          where <span class="special-words">luxurious stays</span> meet comfort
+          and elegance
+        </h1>
+        <p class="hero-subtitle">Discover unforgettable experiences with us</p>
+        <div class="button-container">
+            <button class="btns btns-primary" onclick="scrollToReservation()">Book Now</button>
+        </div>
+      </div>
+    </section>
+    <section class="availability">
+      <form id="availability-form">
+        <div class="box">
+          <p>Check-in <span>*</span></p>
+          <input type="date" class="input" id="checkin-date" required />
+        </div>
+
+        <div class="box">
+          <p>Check-out <span>*</span></p>
+          <input type="date" class="input" id="checkout-date" required />
+        </div>
+
+        <div class="box">
+          <p>Adults <span>*</span></p>
+          <select name="adults" id="adults" class="input" required>
+            <option value="1">1 adult</option>
+            <option value="2">2 adults</option>
+            <option value="3">3 adults</option>
+            <option value="4">4 adults</option>
+            <option value="5">5 adults</option>
+            <option value="6">6 adults</option>
+          </select>
+        </div>
+
+        <div class="box">
+          <p>Children <span>*</span></p>
+          <select name="children" id="children" class="input" required>
+            <option value="0">No children</option>
+            <option value="1">1 child</option>
+            <option value="2">2 children</option>
+            <option value="3">3 children</option>
+            <option value="4">4 children</option>
+            <option value="5">5 children</option>
+          </select>
+        </div>
+
+        <div class="box">
+          <p>Rooms <span>*</span></p>
+          <select name="rooms" id="rooms" class="input" required>
+            <option value="1">1 room</option>
+            <option value="2">2 rooms</option>
+            <option value="3">3 rooms</option>
+            <option value="4">4 rooms</option>
+            <option value="5">5 rooms</option>
+          </select>
+        </div>
+
+        <input
+          type="submit"
+          value="Check Availability"
+          class="btn"
+          id="check-availability" />
+        <p id="availability-message" style="color: green; margin-top: 1rem"></p>
+      </form>
+    </section>
+
+    <!--About section-->
+    <section class="about" id="about">
+      <h1 class="headingH">About Us</h1>
+
+      <div class="row">
+        <div class="image">
+          <img
+            src="./DALL·E 2024-10-18 14.01.00 - A luxurious modern hotel lobby with elegant design, featuring marble floors, stylish furniture, and warm ambient lighting. The scene includes comforta.webp"
+            alt="Hotel Lobby" />
+        </div>
+
+        <div class="content">
+          <p>
+            At HotelHub, we offer a perfect blend of luxury, comfort, and
+            hospitality. Established in 2020, our mission is to provide guests
+            with an unforgettable experience, whether they are here for business
+            or leisure.
+          </p>
+          <p>
+            With beautifully designed rooms and world-class amenities, we ensure
+            every detail is carefully crafted for your comfort. HotelHub is your
+            home away from home, where every stay is made special.
+          </p>
+          <p>
+            Our modern and elegant hotel is designed to make you feel at home
+            from the moment you walk in. With beautifully appointed rooms,
+            state-of-the-art amenities, and top-notch hospitality, we are
+            committed to ensuring that every aspect of your stay is perfect.
+          </p>
+          <p>
+            HotelHub offers a wide range of services, from gourmet dining and a
+            fully-equipped fitness center to serene spa treatments and efficient
+            business facilities. We aim to meet the expectations of every guest
+            by providing a seamless blend of relaxation, entertainment, and
+            productivity.
+          </p>
+          <p>
+            Whether you're staying with us for a weekend getaway or an extended
+            business trip, we are here to ensure that your journey with us is
+            both enjoyable and unforgettable.
+          </p>
+          <p>
+            <strong>Join Us at HotelHubs</strong> Experience the perfect blend
+            of luxury, convenience, and personalized service at HotelHubs. Book
+            your stay today and discover a new standard in hospitality where
+            every moment is tailored to your needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--hotel section-->
+    <section class="hotel-section" id="hotel">
+        <h1 class="headingo">OUR HOTELS</h1>
+    
+        <div class="box-container">
+          <div class="box">
+            <a href="https://www.tajhotels.com/">
+              <img
+                decoding="async"
+                src="./hotel images/hotel taj mumbai.jpeg"
+                alt="Hotel Taj Mumbai"
+              />
+            </a>
+            
+            <div class="content">
+              <h3><i class="fas fa-map-marker-alt"></i> mumbai</h3>
+              <p>
+                Experience unparalleled luxury at the Taj Hotel in Mumbai. Nestled
+                in the city’s vibrant heart. mumbai best hotel.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$250.00 <span>Per Day</span></div>
+              <a href="javascript:void(0)" class="btn" onclick="scrollToReservation()">Book Now</a>
+            </div>
+          </div>
+    
+          <div class="box">
+            <a href="https://hotel-residences.marriott.com/">
+            <img
+              decoding="async"
+              src="./download.jpeg"
+              alt="Hotel Sydney"
+              /></a>
+            <div class="content">
+              <h3><i class="fas fa-map-marker-alt"></i> sydney</h3>
+              <p>
+                Discover luxury at our Sydney hotel, where stunning harbor views
+                meet contemporary elegance.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$100.00 <span>Per Day</span></div>
+              <a href="javascript:void(0)" class="btn" onclick="scrollToReservation()">Book Now</a>
+            </div>
+          </div>
+    
+          <div class="box">
+            <a href="https://www.ritzcarlton.com/">
+            <img
+              decoding="async"
+              src="./hotel images/hotel hawaii.webp"
+              alt="Hotel Hawaii"
+            />
+            </a>
+            <div class="content">
+              <h3><i class="fas fa-map-marker-alt"></i> hawaii</h3>
+              <p>
+                Escape to paradise at our Hawaiian hotel, nestled along pristine
+                beaches. Experience lush landscapes.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$90.00 <span>Per Day</span></div>
+              <a href="javascript:void(0)" class="btn" onclick="scrollToReservation()">Book Now</a>
+            </div>
+          </div>
+    
+          <div class="box">
+            <a href="https://www.nh-hotels.com/">
+            <img
+              decoding="async"
+              src="./hotel images/hotel paris.jpg"
+              alt="Hotel Paris"
+            /></a>
+            <div class="content">
+              <h3><i class="fas fa-map-marker-alt"></i> paris</h3>
+              <p>
+                Indulge in elegance at our Paris hotel, located steps from iconic
+                landmarks. Enjoy refined accommodations.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$120.00 <span>Per Day</span></div>
+              <a href="javascript:void(0)" class="btn" onclick="scrollToReservation()">Book Now</a>
+            </div>
+          </div>
+    
+          <div class="box">
+            <a href="https://andherehotels.jp/">
+            <img
+              decoding="async"
+              src="./hotel images/hotel tokyo.jpg"
+              alt="Hotel Tokyo"
+            />
+            </a>
+            <div class="content">
+              <h3><i class="fas fa-map-marker-alt"></i> tokyo</h3>
+              <p>
+                Experience the perfect blend of tradition and modernity at our
+                Tokyo hotel. With sleek accommodations.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$150.00 <span>Per Day</span></div>
+              <a href="javascript:void(0)" class="btn" onclick="scrollToReservation()">Book Now</a>
+            </div>
+          </div>
+    
+          <div class="box">
+            <a href="https://www.oberoihotels.com/">
+            <img
+              decoding="async"
+              src="./hotel images/hotel delhi oberoi.jpg"
+              alt="Hotel Delhi Oberoi"
+            />
+            </a>
+            <div class="content">
+              <h3><i class="fas fa-map-marker-alt"></i> Delhi</h3>
+              <p>
+                Stay in style at our Delhi hotel, where modern luxury meets rich
+                cultural heritage. Enjoy upscale amenities.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$70.00 <span>Per Day</span></div>
+              <a href="javascript:void(0)" class="btn" onclick="scrollToReservation()">Book Now</a>
+            </div>
+          </div>
+    
+          <div class="box">
+            <a href="https://www.theparkhotels.com/bangalore/">
+            <img
+              decoding="async"
+              src="./hotel images/hotel bangalore.jpg"
+              alt="Hotel Bangalore"
+            />
+            </a>
+            <div class="content">
+              <h3><i class="fas fa-map-marker-alt"></i> bangalore</h3>
+              <p>
+                Experience contemporary luxury at our Bangalore hotel, set in the
+                city's bustling tech hub. Enjoy elegant rooms.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$90.00 <span>Per Day</span></div>
+              <a href="javascript:void(0)" class="btn" onclick="scrollToReservation()">Book Now</a>
+            </div>
+          </div>
+    
+          <div class="box">
+            <a href="https://www.millenniumhotels.com/">
+            <img
+              decoding="async"
+              src="./hotel images/hotel singapore.webp"
+              alt="Hotel Singapore"
+            />
+            </a>
+            <div class="content">
+              <h3><i class="fas fa-map-marker-alt"></i> singapore</h3>
+              <p>
+                Discover the vibrant charm of Singapore at our hotel, featuring
+                modern accommodations and top-notch amenities.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="price">$130.00 <span>Per Day</span></div>
+              <a href="javascript:void(0)" class="btn" onclick="scrollToReservation()">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!--Services section -->
+    <section class="services" id="services">
+      <h1 class="headings">Services</h1>
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-hotel"></i>
+          <h3>affordable hotels</h3>
+          <p>
+            Find the perfect balance of comfort and value with our selection of
+            affordable hotels. Enjoy quality stays, modern amenities, and
+            exceptional service, all at prices that suit your budget.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-utensils"></i>
+          <h3>food and drinks</h3>
+          <p>
+            Savor a variety of delicious cuisines and refreshing beverages at
+            our hotels. From gourmet dining to casual bites, enjoy exceptional
+            food and drink experiences tailored to satisfy every palate.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-bullhorn"></i>
+          <h3>safty guide</h3>
+          <p>
+            Your safety is our top priority. Our comprehensive safety guides
+            ensure a secure and worry-free stay, with clear guidelines and
+            protocols to keep you protected throughout your visit.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-globe-asia"></i>
+          <h3>around the world</h3>
+          <p>
+            Explore our global network of hotels, offering unique experiences in
+            iconic destinations around the world. Wherever your journey takes
+            you, enjoy consistent quality and exceptional service.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-plane"></i>
+          <h3>fastest travel</h3>
+          <p>
+            Travel with speed and ease through our streamlined services,
+            ensuring quick bookings, efficient check-ins, and hassle-free
+            journeys. Experience the fastest way to reach your destination in
+            comfort.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-hiking"></i>
+          <h3>adventures</h3>
+          <p>
+            Embark on thrilling adventures with our curated experiences, from
+            outdoor excursions to exciting city tours. Discover new horizons and
+            create unforgettable memories along the way.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-swimmer icon"></i>
+          <h3>swimming pool</h3>
+          <p>
+            Dive into relaxation with our exquisite swimming pool services.
+            Enjoy swift access to our sparkling pools, where you can unwind,
+            socialize, or get your daily workout.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-dumbbell icon"></i>
+          <h3>Fitness</h3>
+          <p>
+            Achieve your fitness goals with our streamlined services, offering
+            quick class bookings, personalized training sessions, and
+            hassle-free access to our state-of-the-art facilities.
+          </p>
+        </div>
+        <div class="box">
+          <i class="fas fa-glass-cheers"></i>
+          <h3>Bar Services</h3>
+          <p>
+            Enjoy a variety of drinks at our bar, perfect for relaxing after a
+            long day.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--gallery section -->
+    <section class="gallery" id="gallery">
+      <h1 class="headingo">Gallery</h1>
+      <div class="box-container">
+        <div class="box">
+          <img src="./gallery/1+Hotel+South+Beach.jpg" alt="Amazing Places" />
+          <div class="content">
+            <h3>Amazing Places</h3>
+            <p>Explore stunning destinations around the world.</p>
+          </div>
+          </div>
+          <div class="box">
+            <img
+              src="./gallery/hotel-gym-dubai-The-Fitness-Centre-at-Mandarin-Oriental-Jumeira-Dubai-3.jpg"
+              alt="Dubai Luxury Gym" />
+            <div class="content">
+              <h3>Luxury Fitness Gym</h3>
+              <p>Stay fit in style at a world-class gym in Dubai.</p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./gallery/download (1).jpeg" alt="Mountain View" />
+            <div class="content">
+              <h3>Serene Mountain View</h3>
+              <p>Relax in the beauty of tranquil mountain landscapes.</p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./gallery/HEADER.webp" alt="Exotic Beach" />
+            <div class="content">
+              <h3>Gourmet Delights</h3>
+               <p>Indulge in exquisite culinary experiences with flavors from around the world.</p> </div>
+          </div>
+          <div class="box">
+            <img src="./gallery/hotel-tilak.jpg" alt="Hotel Tilak" />
+            <div class="content">
+              <h3>Hotel Tilak</h3>
+              <p>Experience ultimate comfort and hospitality at Hotel Tilak.</p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./gallery/image04_20150506-054700_1.jpg" alt="Cityscape View" />
+            <div class="content">
+              <h3>Vibrant City Life</h3>
+              <p>Discover the charm of bustling cityscapes and urban adventures.</p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./gallery/OIP.jpeg" alt="Tropical Paradise" />
+            <div class="content">
+              <h3>Tropical Paradise</h3>
+              <p>Escape to a tropical island with endless sunshine and beaches.</p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="./gallery/R.jpeg" alt="Majestic Waterfalls" />
+            <div class="content">
+              <h3>Majestic Waterfalls</h3>
+              <p>Marvel at breathtaking waterfalls nestled in nature.</p>
+            </div>
+          </div>
+          <div class="box">
+            <img
+              src="./gallery/The-Vines-Resort-Spa-Swimming-Pool-scaled.webp"
+              alt="Luxury Resort Pool" />
+            <div class="content">
+              <h3>Luxury Resort Pool</h3>
+              <p>Relax by the pool at a high-end resort, where luxury meets nature.</p>
+            </div>
+          </div>
+          <div class="box">
+            <img
+              src="./gallery/hotel-gym-dubai-The-Fitness-Centre-at-Mandarin-Oriental-Jumeira-Dubai-3.jpg"
+              alt="Modern Gym in Dubai" />
+            <div class="content">
+              <h3>Modern Fitness Center</h3>
+              <p>Workout in a state-of-the-art fitness center in Dubai.</p>
+            </div>
+          </div>
+          
+      </div>
+    </section>
+
+    <!--review section-->
+    <section class="review" id="review">
+      <h1 class="headingo">Review</h1>
+      <div class="review-slider">
+        <div class="wrapper">
+          <div class="box">
+            <img
+              decoding="async"
+              src="./review images/istockphoto-1163294201-612x612.jpg"
+              alt="Lalisa Bey" />
+            <h3>Lalisa Bey</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+
+          <div class="box">
+            <img
+              decoding="async"
+              src="./review images/Wedding-Haircut-for-Men-1-1-768x768.webp"
+              alt="Edward Bey" />
+            <h3>Edward Bey</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+
+          <div class="box">
+            <img
+              decoding="async"
+              src="./review images/lisa-promo-crop.webp"
+              alt="Jenna Bey" />
+            <h3>Jenna Bey</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+
+          <div class="box">
+            <img
+              decoding="async"
+              src="./review images/modern-business-man-formal-suit-standing-with-crossed-arms-isolated-grey-background-businesspeople-concept_533057-1641.avif"
+              alt="Edward Bey" />
+            <h3>Edward Bey</h3>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login & Register Form Container -->
+    <div class="login-form-container">
+      <i class="fas fa-times" id="form-close"></i>
+    
+      <!-- Login Form -->
+      <form action="" id="login-form">
+        <h3>Login</h3>
+        <input
+          type="email"
+          class="box"
+          placeholder="Enter your email"
+          required />
+        <input
+          type="password"
+          class="box"
+          placeholder="Enter your password"
+          required />
+        <input type="submit" value="Login Now" class="btn" />
+        <input type="checkbox" id="remember" />
+        <label for="remember">Remember me</label>
+        <p>Forgot password? <a href="#" id="forgot-password-link">Click here</a></p>
+        <p>
+          Don't have an account? <a href="#" id="register-link">Register now</a>
+        </p>
+      </form>
+    
+      <!-- Register Form -->
+      <form action="" id="register-form" style="display: none">
+        <h3>Register</h3>
+        <input type="text" class="box" placeholder="First Name" required />
+        <input type="text" class="box" placeholder="Last Name" required />
+        <input type="date" class="box" required />
+        <input type="email" class="box" placeholder="Email" required />
+        <input type="password" class="box" placeholder="Password" required />
+        <input type="submit" value="Register Now" class="btn" />
+        <p>
+          Already have an account? <a href="#" id="login-link">Login here</a>
+        </p>
+      </form>
+    
+      <!-- Forgot Password Form -->
+      <form id="forgot-password-form" class="form" style="display: none">
+        <h3>Forgot Password</h3>
+        <input
+          type="text"
+          class="box"
+          placeholder="Enter your email or phone to reset password" required />
+        <input type="submit" value="Send reset link" class="btn" />
+        <p><a href="#" id="back-to-login">Back to login</a></p>
+      </form>
+      <div id="success-message" style="display: none; color: green; margin-top: 10px;">
+        Forgot password request was successful!
+      </div>
+    </div>
+    
+     
+    <!--booking section -->
+    <section class="reservation" id="reservation">
+      <h1 class="headingo">Book Now</h1>
+      <form id="reservationForm">
+        <div class="container">
+          <div class="box">
+            <p>Name <span>*</span></p>
+            <input
+              type="text"
+              class="input"
+              placeholder="Your Name"
+              id="name"
+              required />
+          </div>
+          <div class="box">
+            <p>Email <span>*</span></p>
+            <input
+              type="email"
+              class="input"
+              placeholder="Your Email"
+              id="email"
+              required />
+          </div>
+          <div class="box">
+            <p>Choose Hotel <span>*</span></p>
+            <select name="hotel" class="input" id="hotelSelect" required>
+              <option value="">Select a hotel</option>
+              <option value="mumbai">Mumbai - ₹21,000/day</option>
+              <option value="delhi">Delhi - ₹6,000/day</option>
+              <option value="hawaii">Hawaii - $90/day</option>
+              <option value="paris">Paris - $120/day</option>
+              <option value="bangalore">Bangalore - ₹7,600/day</option>
+              <option value="singapore">Singapore - $100/day</option>
+              <option value="sydney">Sydney - $100/day</option>
+              <option value="tokyo">Tokyo - $150/day</option>
+            </select>
+          </div>
+          <div class="box">
+            <p>Check In <span>*</span></p>
+            <input type="date" class="input" id="checkIn" required />
+          </div>
+          <div class="box">
+            <p>Check Out <span>*</span></p>
+            <input type="date" class="input" id="checkOut" required />
+          </div>
+          <div class="box">
+            <p>Adults <span>*</span></p>
+            <select name="adults" class="input" id="adultsSelect" required>
+              <option value="1">1 Adult</option>
+              <option value="2">2 Adults</option>
+              <option value="3">3 Adults</option>
+              <option value="4">4 Adults</option>
+              <option value="5">5 Adults</option>
+              <option value="6">6 Adults</option>
+            </select>
+          </div>
+          <div class="box">
+            <p>Children <span>*</span></p>
+            <select name="children" class="input" id="childrenSelect" required>
+              <option value="0">0 Children</option>
+              <option value="1">1 Child</option>
+              <option value="2">2 Children</option>
+              <option value="3">3 Children</option>
+              <option value="4">4 Children</option>
+              <option value="5">5 Children</option>
+              <option value="6">6 Children</option>
+            </select>
+          </div>
+          <div class="box">
+            <p>Rooms <span>*</span></p>
+            <select name="rooms" class="input" id="roomsSelect" required>
+              <option value="1">1 Room</option>
+              <option value="2">2 Rooms</option>
+              <option value="3">3 Rooms</option>
+              <option value="4">4 Rooms</option>
+              <option value="5">5 Rooms</option>
+              <option value="6">6 Rooms</option>
+            </select>
+          </div>
+          <div class="box">
+            <p>Room Type <span>*</span></p>
+            <select name="type" class="input" id="roomTypeSelect" required>
+              <option value="exclusive">Exclusive Rooms</option>
+              <option value="family">Family Rooms</option>
+              <option value="daily">Daily Rooms</option>
+              <option value="panoramic">Panoramic Rooms</option>
+            </select>
+          </div>
+          <div class="box">
+            <p>Upload Address Proof <span>*</span></p>
+            <input
+              type="file"
+              class="input"
+              accept=".jpg, .jpeg, .png, .pdf"
+              required />
+          </div>
+          <div class="box">
+            <p>Total Amount: <span id="totalAmount">₹0</span></p>
+          </div>
+          <button type="button" class="btn" id="calculateTotal">
+            Calculate Total
+          </button>
+          <button type="button" class="btn" id="bookNow">Book Now</button>
+        </div>
+      </form>
+
+      <!--footer section-->
+    </section>
+    <section class="footer" id="footer">
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section about-container">
+            <h3>About HotelHub</h3>
+            <p class="p">
+              At HotelHub, we provide an unmatched blend of luxury, comfort, and
+              exceptional hospitality. Whether you're traveling for business or
+              leisure.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#hotel">Our hotels</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#review">Review</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p class="p"><strong>Email:</strong> info@hotelhub.com</p>
+            <p class="p"><strong>Phone:</strong> +91 8484848484</p>
+            <p class="p">
+              <strong>Address:</strong> 123 Hotel St, delhi , india
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/soul_code07?igsh=OGJtcjJmZmc0NDFw" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://www.instagram.com/soul_code07?igsh=OGJtcjJmZmc0NDFw" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/soul_code07?igsh=OGJtcjJmZmc0NDFw" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.instagram.com/soul_code07?igsh=OGJtcjJmZmc0NDFw" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 HotelHub. All rights reserved.</p>
+        </div>
+      </footer>
+    </section>
+    <script src="javascript.js"></script>
+  </body>
+</html>
